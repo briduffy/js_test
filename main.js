@@ -34,10 +34,22 @@ function runTest(name, actual, expected){
 
 function run(){
   runTest('sum', sum(2,3), 5)
+  var arr = [1,2,3]
+  var total = arr.reduce(sumArray, 0)
+  runTest('sum array', sum, 6)
+  runTest('avg array', avgArray(arr), 2)
 }
 
 function sum(x,y){
   return x + y
+}
+
+function sumArray(total, num){
+  return total + num
+}
+
+function avgArray(arr){
+  return arr.reduce (sumArray, 0) / arr.length
 }
 
 btn.on('click', function(){
